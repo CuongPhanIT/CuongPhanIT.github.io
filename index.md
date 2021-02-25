@@ -38,7 +38,7 @@
     <h2>Các lĩnh vực của AI</h2>
     <p>
     <img src="https://images.viblo.asia/df75157f-de37-40ba-98af-8b1ae7a81d16.jpg" alt="fail man :(" 
-    </p>
+    </p
     <p><strong>1.Fuzzy Logic</strong></p>
     <p>Logic mờ (FL) là một phương pháp lập luận giống với suy luận của con người. Cách tiếp cận của FL bắt chước cách ra quyết định của con người liên quan đến tất cả các khả năng trung gian giữa các giá trị kỹ thuật số YES và NO.</p>
     <p>Khối logic thông thường mà máy tính có thể hiểu được nhận đầu vào chính xác và tạo ra đầu ra xác định là TRUE hoặc FALSE, tương đương với YES hoặc NO của con người.</p>
