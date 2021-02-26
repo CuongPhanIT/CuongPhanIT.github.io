@@ -1,0 +1,38 @@
+.content {
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    background-color: rgb(192, 190, 190);
+    padding:5px;
+}
+.box{
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin:10px;
+    box-shadow: 0 0 15px rgb(110, 112, 109);
+}
+.headbox{
+    font-size: 20px;
+}
+.bodybox{
+    margin-left:20px;
+    border-bottom: 1px solid rgb(151, 149, 149) ;
+}
+.datetime{
+    font-size: 15px;
+     color:green;
+}
+h1{
+    font-family: Arial,sans-serif;
+    color:rgba(128, 128, 128, 0.63);
+    font-weight: 10;
+}
+h3{
+    font-family: Arial,sans-serif;
+    color:rgb(99, 96, 96);
+}
+p{
+    font-size: 12px;
+}
