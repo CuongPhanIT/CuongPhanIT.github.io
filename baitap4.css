@@ -18,10 +18,10 @@ head,body{
     width:40%;
     margin : 40px;
     padding:20px;
-    box-shadow: 20px 20px 10px 10px rgb(187, 183, 183); 
+    box-shadow: 5px 5px 5px 5px rgb(187, 183, 183) ; 
 }
 .box:hover{
-    box-shadow: 5px 5px 5px 5px rgb(187, 183, 183) ;
+    box-shadow: 20px 20px 10px 10px rgb(187, 183, 183);
 }
 .headbox{
     margin: 10px;
