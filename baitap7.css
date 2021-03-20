@@ -1,0 +1,244 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+}
+.introduction{
+    height: 100%;
+    width: 100%;
+    animation-name:change ;
+    animation-duration: 4s;
+  animation-iteration-count: infinite;
+  background-size: cover;
+    background-image: url("https://i.pinimg.com/originals/0b/06/39/0b06397a3199bee4a5922ee4488ebf5a.jpg");
+}
+@keyframes change{
+    from {background-image: url("https://i.pinimg.com/originals/0b/06/39/0b06397a3199bee4a5922ee4488ebf5a.jpg");}
+    to{background-image: url("https://wallpapercave.com/wp/wp2062774.jpg");}
+    
+}
+.intro_content{
+    position: absolute;
+    height: 80%;
+    width: 40%;
+    text-align: center;
+    top :50%;
+    left :50%;
+    font-size: xx-large;
+    transform: translate(-50%,-50%);
+}
+.intro_content h1::before{
+    text-align: center;
+    position: absolute;
+    content: attr(data-text);
+    color :white;
+    height:fit-content;
+    left: 0px;
+    overflow: hidden;
+    animation: text 4s linear infinite;
+}
+.intro_content p::before{
+    text-align: center;
+    position: absolute;
+    content: attr(data-text);
+    color :white;
+    height:fit-content;
+    left: 0px;
+    overflow: hidden;
+    animation: text 4s linear infinite;
+}
+@keyframes text{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 40%;
+    }
+}
+
+.intro_content .box2{
+    position: absolute;
+    top :50%;
+    left:50%;
+    width : 100%;
+    border-left: whitesmoke double 5px ;
+    border-right: whitesmoke double 5px;
+    transform: translate(-50% ,-50%);
+    opacity: 0;
+}
+.intro_content:hover .box2{
+    height: 100%;
+    transition: 800ms;
+    opacity: 1;
+}
+.intro_content:not(:hover) .box2{
+    height: 20%;
+    transition: 800ms;
+    opacity: 0;
+}
+
+
+.intro_content .box1{
+    position: absolute;
+    top :50%;
+    left:50%;
+    height : 100%;
+    border-top: whitesmoke double 5px ;
+    border-bottom: whitesmoke double 5px;
+    transform: translate(-50% ,-50%);
+    opacity: 0;
+}
+.intro_content:hover .box1{
+    width: 100%;
+    transition: 800ms;
+    opacity: 1;
+}
+.intro_content:not(:hover) .box1{
+    width: 20%;
+    transition: 800ms;
+    opacity: 0;
+}
+
+.menubar{
+    /* left: 50%;
+    transformV: translateX(-50%); */
+    text-align: center;
+    background-color: rgb(110, 85, 85);
+    height: 5%;
+    width: 100%;
+    top:0;
+    position: sticky;
+    font-weight: 800;
+}
+.detail{
+    height:fit-content;
+    width:70%;
+    margin: auto;
+    font-size: small;
+}
+    /* aboutme */
+.aboutme{
+    background-color: white;    
+    height: fit-content;
+    padding: 2%;
+}
+
+/* education */
+.edu_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card{
+    width: calc(90%/3);
+    background-color:orange;
+}
+.card img{
+    width: 100%;
+    height: 40%;
+}
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    line-height: 200%;
+}
+.mecontent1{
+    height: fit-content;
+    width: 50%;
+}
+.mecontent2{
+    height: fit-content;
+    width: 50%;
+}
+.aboutme h1{
+    color: #DBD5C5;
+    font-size: 36px;
+}
+
+.education{
+    padding: 2%;
+}
+.year{
+    height: fit-content;
+    width: calc(100%/3);
+}
+.level{
+    text-align: center;
+    width: calc(100%/3);
+}
+.university{
+    text-align: center;
+    width: calc(100%/3);
+} 
+ul{
+    list-style-type: none;
+}
+.mecontent1 a{
+    color: blue;
+}
+.education li{
+    margin: 5%;
+    height: 40px;
+}
+.year li{
+    background-color: #DBD5C5;
+    width: 60%;
+    text-align: center;
+}
+.education h1{
+    font-size: 36px;
+    opacity: 0.7;
+}
+
+    /* experience */
+.experience{
+    background-color: #DBD5C5;
+    padding: 2%;
+}
+.expe_content{
+    display: flex;
+    flex-direction: column;
+    height : 100%;
+    width: 100%;
+    margin: 2% 0% 0% 5%;
+}
+.expe_header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+}
+.expe_headerleft{
+    width: 65%;
+    height: 100%;
+}
+.expe_headerright{
+    height: 100%;
+    width: 35%;   
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.experience span{
+    font-size: xx-large;
+    margin: 0 10% 0 10%;
+}
+.experience a{
+    color: rgb(59, 133, 182);
+}
+.experience h1{
+    font-weight: 800;
+    opacity: 0.5;
+    font-size: 36px;
+}
+.experience p {
+    opacity: 0.7;
+}
+a{
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
