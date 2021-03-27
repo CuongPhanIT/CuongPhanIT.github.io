@@ -1,0 +1,52 @@
+@media(min-width :576px){
+
+    .intro_content h1{
+        font-size: 35px !important;
+    }
+    .intro_content p{
+        font-size: 20px;
+    }
+    .aboutme{
+        line-height: 2px !important;
+    }
+    h1{
+        font-size: 20px !important;
+    }
+    .aboutme span{
+        font-size: 10px !important;
+    }
+    .mecontent img{
+        height: 150px;
+        width: 120px;
+    }
+    strong{
+        font-size: 10px;
+    }
+
+
+    /* Work_experience */
+
+    .experience .card {
+        line-height: 20px !important;
+        font-size: 10px;
+    }
+    .experience .card::after{
+        width: 40px;
+        left:-40px;
+    }
+    .experience .card::before{
+        left:-49px;
+    }
+
+}
+
+@media(min-width:768px){
+
+}
+
+@media(min-width:992px){
+
+}
+@media(min-width:1200px){
+
+}
