@@ -1,16 +1,53 @@
-@media(min-width :576px){
-
+@media(min-width :576px ) and (max-width : 767px){
     .intro_content h1{
         font-size: 35px !important;
     }
     .intro_content p{
         font-size: 20px;
     }
+    /* menubar */
+    .menubar {
+        height: 35px;
+        font-size: 18px;
+    }
+    /* menubar */
+
+    /* detail */
+    .detail h1{
+        font-size: 30px !important;
+        opacity: 0.7;
+    }
+    .detail strong{
+        font-size: 18px !important;
+    }
+    .detail p span{
+        font-size: 14px !important;
+    }
+    .detail a{
+        font-size: 14px !important;
+    }
+    .detail img{
+        height: 300px !important; 
+        width: 300px !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* detail */
+
+    /* aboutme */
     .aboutme{
         line-height: 2px !important;
     }
-    h1{
-        font-size: 20px !important;
+    .aboutme .detail{
+        height: 600px !important;
+    }
+    .content{
+        flex-wrap: wrap;
+    } 
+   .mecontent{
+        width: 500px;
+        align-items: center;
     }
     .aboutme span{
         font-size: 10px !important;
@@ -19,9 +56,20 @@
         height: 150px;
         width: 120px;
     }
-    strong{
-        font-size: 10px;
+    /* aboutme */
+
+    /* education  */
+    
+    .education .card{
+        width: 200px !important;
+    } 
+    .education p{
+        font-size: 16px;
     }
+    .education h2{
+        font-size: 18px !important;
+    }
+    /* education */
 
 
     /* Work_experience */
@@ -29,6 +77,7 @@
     .experience .card {
         line-height: 20px !important;
         font-size: 10px;
+        width: 350px;
     }
     .experience .card::after{
         width: 40px;
@@ -37,16 +86,369 @@
     .experience .card::before{
         left:-49px;
     }
+    .experience .card p{
+        font-size: 14px;
+    }
+    /* experience */
 
+
+        /* skill */
+
+    .skill .card{
+        width: 150px;
+        height: 200px;
+    }
+
+    .percent .number h2{
+        font-size: 25px !important;
+    }
+
+    .skill .text{
+        font-size: 15px;
+    } 
+    .skill .card:hover .percent .number h2{
+    font-size: 30px !important;
+    }       
+    /* experience */
+
+        /* footer  */
+    .footer h5{
+        font-size: 17px !important;
+        color: white !important;
+    }
+    .footer p{
+        font-size: 13px !important;
+    }
+    .footer i{
+        font-size: 30px;
+    }
+    /* footer */
+    
+    h1{
+        font-size: 20px !important;
+    }
+    strong{
+        font-size: 10px;
+    }
 }
 
-@media(min-width:768px){
+@media(min-width:768px) and (max-width : 991px){
 
+    /* introduction */
+    .intro_content h1{
+        font-size: 40px !important;
+    }
+    .intro_content p{
+        font-size: 25px !important;
+    }
+    /* introduction */
+
+    /* menubar */
+
+    .menubar{
+       font-size: 20px;
+       height: 50px;
+    }
+    /* menubar */
+
+    /* detail */
+    .detail h1{
+        font-size: 30px !important;
+        opacity: 0.7;
+    }
+    .detail strong{
+        font-size: 18px !important;
+    }
+    .detail p span{
+        font-size: 14px !important;
+    }
+    .detail a{
+        font-size: 14px !important;
+    }
+    .detail img{
+        height: 200px !important; 
+        width: 170px !important;
+    }
+
+    .detail{
+        padding: 50px !important;
+        height: auto !important;
+    }
+    /* detail */
+
+    /* education */
+    .education h2{
+        font-size: 18px !important;    
+    }
+    .education p{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    /* education */
+
+
+
+    /* experience */
+    .experience .card{
+        line-height: 20px !important;
+    }
+    .experience .card p{
+        font-size: 14px !important;
+    }
+    .experience .card strong{
+        font-size: 16px !important;
+    }
+
+    .experience .card::before{
+        width: 14px !important;
+        height: 14px !important;
+        left:-50px !important;
+        top :22px;
+    }
+    /* experience */
+
+        /* skill  */
+    .skill .card{
+        width: 170px;
+        height: 200px;
+    }
+
+    .percent .number h2{
+        font-size: 35px !important;
+    }
+
+    .skill .text{
+        font-size: 17px;
+    } 
+    .skill .card:hover .percent .number h2{
+    font-size: 45px !important;
+    }
+    /* skill */
+
+    /* footer */
+    .footer h5{
+        font-size: 18px !important;
+        color: white !important;
+    }
+    .footer p{
+        font-size: 14px !important;
+    }
+    .footer i{
+        font-size: 36px ;
+    }
+    /* footer */
+}
+@media(min-width:992px) and (max-width : 1199px){
+    /* introduction */
+    .intro_content h1{
+        font-size: 48px !important;
+    }
+    .intro_content p{
+        font-size: 28px !important;
+    }
+    /* introduction */
+
+    /* menubar */
+   .menubar{
+       height: 50px !important;
+        font-size: 20px;
+   }
+   /* menubar */
+
+   /* detail */
+    .detail h1{
+        font-size: 30px !important;
+        opacity: 0.7;
+    }
+    .detail strong{
+        font-size: 18px !important;
+    }
+    .detail p span{
+        font-size: 14px !important;
+    }
+    .detail a{
+        font-size: 14px !important;
+    }
+    .detail img{
+        height: 400px !important; 
+        width: 200px !important;
+    }
+    .detail{
+        padding: 50px !important;
+        height: auto !important;
+    }
+    /* detail */
+
+    /* education */
+
+    .education{
+        line-height: 35px !important;
+    }
+    .education .card p{
+        line-height: 18px !important;
+    }
+    /* education */
+
+
+    /* experience */
+    .experience .card{
+        line-height: 20px !important;
+    }
+    .experience .card p{
+        font-size: 14px !important;
+    }
+    .experience .card::before{
+        width: 14px !important;
+        height: 14px !important;
+        left:-50px !important;
+        top :22px;
+    }
+    /* experience */
+
+    /* skill */
+
+    .skill .card{
+        width: 200px;
+        height: 250px;
+    }
+
+    .percent .number h2{
+        font-size: 37px !important;
+    }
+
+    .skill .text{
+        font-size: 18px;
+    } 
+    .skill .card:hover .percent .number h2{
+        font-size: 47px !important;
+    }
+    /* experience */
+
+
+    /* footer */
+    .footer h5{
+        font-size: 20px !important;
+        color: white !important;
+    }
+    .footer p{
+        font-size: 14px !important;
+    }
+    .footer i{
+        font-size: 40px;
+    }
+    /* footer */
 }
 
-@media(min-width:992px){
 
-}
+
+
 @media(min-width:1200px){
 
+    /* introduction */
+    .intro_content h1{
+        font-size: 50px !important;
+    }
+    .intro_content p{
+        font-size: 30px !important;
+    }
+    /* introduction */
+
+    /* menubar */
+    .menubar{
+        height: 50px;
+        font-size: 22px !important;
+    }
+    /* menubar */
+
+    /* detail */
+    .detail h1{
+        font-size: 36px !important;
+        opacity: 0.7;
+    }
+    .detail strong{
+        font-size: 22px !important;
+    }
+    .detail p span{
+        font-size: 18px !important;
+    }
+    .detail a{
+        font-size: 18px !important;
+    }
+    .detail img{
+        height: 400px; 
+        width: 250px;
+    }
+    .detail{
+        padding: 50px !important;
+    }
+    /* detail */
+
+    /* aboutme */
+    .aboutme p{
+        line-height: 25px !important;
+    }
+    /* aboutme */
+
+    /* education  */
+    .education{
+        line-height: 40px !important;
+    }
+    .education .card p{
+        font-size: 16px !important;
+        line-height: 20px !important;
+        opacity: 0.7;
+    }
+    /* education */
+
+    /* experience */
+    .experience .card{
+        line-height: 25px !important;
+    }
+    .experience .card p{
+        font-size: 18px !important;
+    }
+    .experience .card strong{
+        font-size: 20px !important;
+    }
+    .experience .card::before{
+        width: 18px !important;
+        height: 18px !important;
+        left:-54px !important;
+        top :20px;
+    }
+    /* education  */
+
+
+    /* skill */
+    .skill .card{
+        width: 250px;
+        height: 300px;
+    }
+
+    .percent .number h2{
+        font-size: 40px !important;
+    }
+
+    .skill .text{
+        font-size: 20px;
+    } 
+    .skill .card:hover .percent .number h2{
+        font-size: 50px !important;
+    }
+    /* skill */
+
+    /* footer  */
+
+    .footer h5{
+        font-size: 23px !important;
+        color: white !important;
+    }
+    .footer p{
+        font-size: 20px !important;
+    }
+
+    .footer i{
+        font-size: 40px !important;
+    }
+    /* footer */
 }
