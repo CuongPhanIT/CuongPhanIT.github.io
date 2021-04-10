@@ -15,8 +15,6 @@ function readURL(input) {
 function submit(){
     let name=document.getElementById("txtname").value;
     let category=document.getElementById("categories").value;
-    localStorage.setItem("img",reader.result);
-    console.log(reader.result);
     if(check(name,category)){
         const item = {
             _name : name,
