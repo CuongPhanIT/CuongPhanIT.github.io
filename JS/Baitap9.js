@@ -3,7 +3,6 @@ function readURL(input) {
     console.log(input);
             if (input.files && input.files[0]) {
                 reader = new FileReader();
-
                 reader.onload = function (e) {
                     $("#idimg")
                         .attr('src', e.target.result)
@@ -16,16 +15,19 @@ function readURL(input) {
 function submit(){
     let name=document.getElementById("txtname").value;
     let category=document.getElementById("categories").value;
-    localStorage.setItem("3","adasdasdasdasda");
+    localStorage.setItem("img",reader.result);
+    console.log(reader.result);
     if(check(name,category)){
         const item = {
             _name : name,
-            _category : category,
+            _category   : category,
+            _img : reader.result
         }
         localStorage.setItem(name,JSON.stringify(item));
     }
 }
 function check(name,category){
+    var stored_item = JSON.parse(localStorage.getItem(name));
     if(name.length ==0){
         document.getElementById("name-warning").innerHTML="Name is required";
         return false;
@@ -36,6 +38,11 @@ function check(name,category){
     }
     if(name>='0' && name<='9') {
         document.getElementById("name-warning").innerHTML="Must start with a character";
+        return false;
+    }
+    if(stored_item!=null){
+
+        document.getElementById("name-warning").innerHTML="Item has already exists";
         return false;
     }
     if(category=="Not Selected"){
