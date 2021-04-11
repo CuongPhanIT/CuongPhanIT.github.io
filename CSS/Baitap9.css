@@ -35,6 +35,10 @@
     
 }
 
+.btn{
+    margin: 5px;
+}
+
 .item-table {
     border-collapse: collapse;
     margin: 25px 0;

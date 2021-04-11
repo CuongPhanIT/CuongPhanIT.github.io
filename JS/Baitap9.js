@@ -2,27 +2,41 @@ var reader ="";
 function load_data(){
     let table , item_list ;
     let count=1;
-    table = document.getElementById("idtable");
+    table = document.getElementById("idtable").getElementsByTagName("tbody")[0];
 
     item_list = JSON.parse(localStorage.getItem("item_list"));
     item_list.forEach(element => {
         let row = table.insertRow(count);
         let item = JSON.parse(element);
+        let btnedit =document.createElement("button");
+        let btndelete = document.createElement("button");
         let img = new Image();
-        img.src = item._img;
         
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        // var cell1 = row.insertCell(0);
+        
+        img.src = item._img;
+        img.width=200;
+        img.height=100;
+       
+        btnedit.className +="btn btn-primary";
+        btnedit.innerHTML="EDIT";
+        
+
+        btndelete.className += "btn btn-danger";
+        btndelete.innerHTML="DELETE";
+
+        var cell0 = row.insertCell(0)
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        var cell3 = row.insertCell(3);
+        var cell4 = row.insertCell(4);
 
 
-    
+        cell0.innerHTML = count++;
         cell1.innerHTML = item._name;
         cell2.innerHTML =item._category ;
         cell3.appendChild(img);
-        cell4.
+        cell4.appendChild(btnedit);
+        cell4.appendChild(btndelete);
     });
 }
 
@@ -56,6 +70,7 @@ function submit(){
         item_list.push(JSON.stringify(item));
         localStorage.setItem("item_list",JSON.stringify(item_list));
     }
+    
 }
 function check(name,category){
     var item_list ;
