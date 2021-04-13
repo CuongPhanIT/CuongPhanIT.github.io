@@ -17,23 +17,53 @@ function load_data(){
 function addrow(item , count){
     let row = table.insertRow(count);
     let btnedit =document.createElement("button");
-    var btndelete = document.createElement("button");
-    let img = new Image();
-        
-        
+    let btndelete = document.createElement("button");
+    let btnsave = document.createElement("button");
+    let txtname = document.createElement("input");
+    let cbb = document.createElement("select");
+
+        //image
+        let img = new Image();
         img.src = item._img;
         img.width=200;
         img.height=100;
        
-        btnedit.className +="btn btn-primary";
+        //button edit
+        btnedit.className ="btn btn-primary";
         btnedit.innerHTML="EDIT";
-        
+        btnedit.id="btnedit"+count;
+        btnedit.onclick = item_edit;        
 
-        btndelete.className += "btn btn-danger";
+
+        //button save
+        btnsave.className = "btn btn-success";
+        btnsave.innerHTML = "SAVE";
+        btnsave.id="btnsave"+count;
+
+        //button delete
+        btndelete.className = "btn btn-danger";
         btndelete.innerHTML="DELETE";
-        btndelete.id=count;
-         btndelete.onclick =item_delete;
-   //     btndelete.addEventListener("click",item_delete);
+        btndelete.id="btndelete"+count;
+        btndelete.onclick =item_delete;
+
+        //input name
+        txtname.setAttribute("type","text");
+        txtname.readOnly=true;
+        txtname.setAttribute("value",item._name);
+
+        //combobox
+        var array = ["Not Selected","Category1","Category2","Category3"];
+        cbb.id="idcbb";
+        for (let i = 0; i < array.length; i++) {
+            let option = document.createElement("option");
+            option.value = array[i];
+            option.text = array[i];
+            cbb.add(option);
+        }
+        cbb.value=item._category;
+        cbb.disabled = true;
+
+
 
         var cell0 = row.insertCell(0)
         var cell1 = row.insertCell(1);
@@ -41,29 +71,40 @@ function addrow(item , count){
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
 
+cell4.id="cuong";
 
         cell0.innerHTML = count;
-        cell1.innerHTML = item._name;
-        cell2.innerHTML =item._category ;
+        cell1.appendChild(txtname);
+        // cell1.innerHTML = item._name;
+        // cell2.innerHTML =item._category ;
+        cell2.appendChild(cbb);
         cell3.appendChild(img);
         cell4.appendChild(btnedit);
         cell4.appendChild(btndelete);
 
 }
+function item_edit(){
+    let id_btnsave = "btnsave"+this.id;
+    let cell4 = document.getElementById("cuong").childNodes[0];
+    let btnsave = document.getElementById(id_btnsave);
+    console.log(btnsave);
+    cell4.replaceChild(btnsave,cell4.childNodes[0]);
+}
 
 function readURL(input) {
-    console.log(input);
-            if (input.files && input.files[0]) {
-                reader = new FileReader();
-                reader.onload = function (e) {
-                    $("#idimg")
-                        .attr('src', e.target.result)
-                        .width(150)
-                        .height(100);
-                };
+    let img=document.getElementById("idimg");
+        if (input.files && input.files[0]) {
+            reader = new FileReader();
+            reader.onload = function (e) {
+                img.src=e.target.result;
+                img.width=150;
+                img.height=100;
+            };
                 reader.readAsDataURL(input.files[0]);
-            }
         }
+}
+
+
 function submit(){
     let name=document.getElementById("txtname").value;
     let category=document.getElementById("categories").value;
@@ -90,7 +131,7 @@ function item_delete(){
     let item_list=JSON.parse(localStorage.getItem("item_list"));
     let index;
     let row = table.rows[this.id];
-    let itemname = row.cells[1].innerHTML;
+    let itemname = row.cells[1].childNodes[0].value;
 
     //delete table 
     table.deleteRow(this.id);
