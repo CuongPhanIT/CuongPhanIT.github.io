@@ -75,7 +75,12 @@ function addrow(item , count){
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
 
+        let hidden = document.createElement("input");
+        hidden.setAttribute("type","hidden");
+        hidden.setAttribute("value","hellocuong");
+
         cell0.innerHTML = count;
+        cell0.appendChild(hidden);
         cell1.appendChild(txtname);
         cell2.appendChild(cbb);
         cell3.appendChild(img);
@@ -94,24 +99,68 @@ function item_edit(){
     let txtname = document.getElementById("txtname"+index);
     let cbb = document.getElementById("cbb"+index);
     
-    cell4.replaceChild(btnsave,cell4.childNodes[0]);
+    // cell4.replaceChild(btnsave,cell4.childNodes[0]);
+    // cell4.insertBefore(btnsave,cell4.childNodes[0]);
+    cell4.insertBefore(btnsave,document.getElementById(this.id));
+    document.getElementById(this.id).hidden=true;
     btnsave.hidden=false;
     txtname.readOnly = false;
     cbb.disabled=false;
 }
 
 function item_save(){
+    let item_list=JSON.parse(localStorage.getItem("item_list"));
     let index = this.id.replace("btnsave","");
     let id_btnedit = "btnedit"+index;
-    let cell4 = document.getElementById("idcell4_"+index);
     let btnedit = document.getElementById(id_btnedit);
+    let btnsave = document.getElementById(this.id);
     let txtname = document.getElementById("txtname"+index);
     let cbb = document.getElementById("cbb"+index);
     
-    cell4.replaceChild(btnedit,cell4.childNodes[0]);
-    btnsave.hidden=false;
-    txtname.readOnly = false;
-    cbb.disabled=false;
+    btnsave.hidden=true;
+    btnedit.hidden = false;
+    txtname.readOnly = true;
+    cbb.disabled=true;
+
+    // for(let i=0;i<item_list.length;i++){
+    //     let item = JSON.parse(item_list[i]);
+    //     if()
+    // }
+
+    // if(check(txtname,cbb.value)){
+    //     const item = {
+    //         _name : txtname,
+    //         _category   : cbb.value,
+    //         _img : "dasd";
+    //     }
+
+    //     item_list.push(JSON.stringify(item));
+    //     localStorage.setItem("item_list",JSON.stringify(item_list));
+        
+    // }
+}
+
+function item_delete(){
+    let item_list=JSON.parse(localStorage.getItem("item_list"));
+    let index;
+    let indexrow= this.id.replace("btndelete","");
+    let row = table.rows[indexrow];
+    let itemname = row.cells[1].childNodes[0].value;
+
+    //delete table 
+    table.deleteRow(indexrow);
+
+    //delete in local storage
+    for(let i =0 ;i < item_list.length ;i++){
+        let item = JSON.parse(item_list[i]);
+        if(itemname === item._name) {
+            index=item_list.indexOf(item);
+            item_list.splice(index,1);
+            break;
+        }
+    }
+    //update local storage
+    localStorage.setItem("item_list",JSON.stringify(item_list));
 }
 
 function readURL(input) {
@@ -150,28 +199,6 @@ function submit(){
 
 }
 
-function item_delete(){
-    let item_list=JSON.parse(localStorage.getItem("item_list"));
-    let index;
-    let indexrow= this.id.replace("btndelete","");
-    let row = table.rows[indexrow];
-    let itemname = row.cells[1].childNodes[0].value;
-
-    //delete table 
-    table.deleteRow(indexrow);
-
-    //delete in local storage
-    for(let i =0 ;i < item_list.length ;i++){
-        let item = JSON.parse(item_list[i]);
-        if(itemname === item._name) {
-            index=item_list.indexOf(item);
-            item_list.splice(index,1);
-            break;
-        }
-    }
-    //update local storage
-    localStorage.setItem("item_list",JSON.stringify(item_list));
-}
 
 
 function check(name,category){
