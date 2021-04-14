@@ -39,6 +39,8 @@ function addrow(item , count){
         btnsave.className = "btn btn-success";
         btnsave.innerHTML = "SAVE";
         btnsave.id="btnsave"+count;
+        btnsave.hidden = true;
+        btnsave.onclick = item_save;
 
         //button delete
         btndelete.className = "btn btn-danger";
@@ -50,6 +52,7 @@ function addrow(item , count){
         txtname.setAttribute("type","text");
         txtname.readOnly=true;
         txtname.setAttribute("value",item._name);
+        txtname.id="txtname"+count;
 
         //combobox
         var array = ["Not Selected","Category1","Category2","Category3"];
@@ -62,6 +65,7 @@ function addrow(item , count){
         }
         cbb.value=item._category;
         cbb.disabled = true;
+        cbb.id = "cbb"+count;
 
 
 
@@ -71,24 +75,43 @@ function addrow(item , count){
         var cell3 = row.insertCell(3);
         var cell4 = row.insertCell(4);
 
-cell4.id="cuong";
-
         cell0.innerHTML = count;
         cell1.appendChild(txtname);
-        // cell1.innerHTML = item._name;
-        // cell2.innerHTML =item._category ;
         cell2.appendChild(cbb);
         cell3.appendChild(img);
+        cell4.id="idcell4_"+count;
         cell4.appendChild(btnedit);
         cell4.appendChild(btndelete);
+        cell4.appendChild(btnsave);
+        
 
 }
 function item_edit(){
-    let id_btnsave = "btnsave"+this.id;
-    let cell4 = document.getElementById("cuong").childNodes[0];
+    let index = this.id.replace("btnedit","");
+    let id_btnsave = "btnsave"+index;
+    let cell4 = document.getElementById("idcell4_"+index);
     let btnsave = document.getElementById(id_btnsave);
-    console.log(btnsave);
+    let txtname = document.getElementById("txtname"+index);
+    let cbb = document.getElementById("cbb"+index);
+    
     cell4.replaceChild(btnsave,cell4.childNodes[0]);
+    btnsave.hidden=false;
+    txtname.readOnly = false;
+    cbb.disabled=false;
+}
+
+function item_save(){
+    let index = this.id.replace("btnsave","");
+    let id_btnedit = "btnedit"+index;
+    let cell4 = document.getElementById("idcell4_"+index);
+    let btnedit = document.getElementById(id_btnedit);
+    let txtname = document.getElementById("txtname"+index);
+    let cbb = document.getElementById("cbb"+index);
+    
+    cell4.replaceChild(btnedit,cell4.childNodes[0]);
+    btnsave.hidden=false;
+    txtname.readOnly = false;
+    cbb.disabled=false;
 }
 
 function readURL(input) {
@@ -100,7 +123,7 @@ function readURL(input) {
                 img.width=150;
                 img.height=100;
             };
-                reader.readAsDataURL(input.files[0]);
+            reader.readAsDataURL(input.files[0]);
         }
 }
 
@@ -130,11 +153,12 @@ function submit(){
 function item_delete(){
     let item_list=JSON.parse(localStorage.getItem("item_list"));
     let index;
-    let row = table.rows[this.id];
+    let indexrow= this.id.replace("btndelete","");
+    let row = table.rows[indexrow];
     let itemname = row.cells[1].childNodes[0].value;
 
     //delete table 
-    table.deleteRow(this.id);
+    table.deleteRow(indexrow);
 
     //delete in local storage
     for(let i =0 ;i < item_list.length ;i++){
