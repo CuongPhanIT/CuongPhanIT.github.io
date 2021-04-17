@@ -107,11 +107,20 @@ function addrow(item , count){
         
 
 }
+function checkImage(filename){
+    let accept = ["jpg","png","jpeg"];
+    let imgext = filename.split(".").pop();
+    return accept.includes(imgext);
+}
 
 function readURL(input) {
     let idimg
+    if( !checkImage(input.value) ) {
+        document.getElementById("img-warning").innerHTML = "File extention is not compatible"
+    }else{
+        document.getElementById("img-warning").innerHTML = "";
+    }
     if(input.id !=null) idimg = "img"+input.id.replace("btnchooseimg","");
-    console.log(idimg);
     let img=document.getElementById(idimg);
         if (input.files && input.files[0]) {
             reader = new FileReader();
@@ -164,6 +173,7 @@ function check(name,category,img){
     if(category!="Not Selected"){
         document.getElementById("category-warning").innerHTML=null;
     }
+    
 
     if(name.length ==0){
         document.getElementById("name-warning").innerHTML="Name is required";
