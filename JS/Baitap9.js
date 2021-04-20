@@ -142,10 +142,10 @@ function submit(){
     let count;
     if(item_list==null ) item_list=[];
     if(current_id ==null) current_id = 1;
-    if(check(txtname.value,category.value)){
+    if(check(txtname.value.trim(),category.value)){
         const item = {
             _id : current_id++ ,
-            _name : txtname.value,
+            _name : txtname.value.trim(),
             _category   : category.value,
             _img : reader.result
         }
@@ -163,29 +163,22 @@ function submit(){
 }
 
 function check(name,category,img){
-    var item_list ;
-    var item;
-
-    if(!(name.length == 0 && name.length > 10 && ( name >= '0' && name <= '9' ) )){
-        document.getElementById("name-warning").innerHTML=null;
-    }
-
-    if(category!="Not Selected"){
-        document.getElementById("category-warning").innerHTML=null;
-    }
+    let item_list ;
+    let item;
+    let check=true;
     
 
     if(name.length ==0){
         document.getElementById("name-warning").innerHTML="Name is required";
-        return false;
+        check =false;
     }
     if(name.length>10){
-        document.getElementById("name-warning").innerHTML="Length must be less than 10";
-        return false;
+        document.getElementById("name-warning").innerHTML="Length must not be greater than 10";
+        check =  false;
     }
     if(name>='0' && name<='9') {
-        document.getElementById("name-warning").innerHTML="Must start with a character";
-        return false;
+        document.getElementById("name-warning").innerHTML="Must start with a letter";
+        check =  false;
     }
 
     item_list = JSON.parse(localStorage.getItem("item_list"));
@@ -193,14 +186,22 @@ function check(name,category,img){
         item = item_list.map(x => JSON.parse(x)).filter(x => x._name==name);
         if(!item.toString()==""){
             document.getElementById("name-warning").innerHTML="Item has already exists";
-            return false;
+            check = false;
         }
     }
     if(category=="Not Selected"){
         document.getElementById("category-warning").innerHTML="Category is required";
-        return false;
+        check = false;
     }
-    return true;
+
+    if(!(name.length==0 || name.length > 10 || ( name[0] >= '0' && name[0] <= '9' ) )){
+        document.getElementById("name-warning").innerHTML=null;
+    }
+
+    if(category!="Not Selected"){
+        document.getElementById("category-warning").innerHTML=null;
+    }
+    return check;
 }
 
 function item_edit(){
