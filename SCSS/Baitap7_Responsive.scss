@@ -1,0 +1,429 @@
+@media (min-width : 576px ) and (max-width : 767px) {
+	.intro_content {
+		h1 {
+			font-size: 35px !important;
+		}
+		p {
+			font-size: 20px;
+		}
+	}
+	.menubar {
+		height: 35px;
+		font-size: 18px;
+	}
+	.detail {
+		h1 {
+			font-size: 30px !important;
+			opacity: 0.7;
+		}
+		strong {
+			font-size: 18px !important;
+		}
+		p {
+			span {
+				font-size: 14px !important;
+			}
+		}
+		a {
+			font-size: 14px !important;
+		}
+		img {
+			height: 300px !important;
+			width: 300px !important;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	.aboutme {
+		line-height: 2px !important;
+		.detail {
+			height: 600px !important;
+		}
+		span {
+			font-size: 10px !important;
+		}
+	}
+	.content {
+		flex-wrap: wrap;
+	}
+	.mecontent {
+		width: 500px;
+		align-items: center;
+		img {
+			height: 150px;
+			width: 120px;
+		}
+	}
+	.education {
+		.card {
+			width: 200px !important;
+		}
+		p {
+			font-size: 16px;
+		}
+		h2 {
+			font-size: 18px !important;
+		}
+	}
+	.experience {
+		.card {
+			line-height: 20px !important;
+			font-size: 10px;
+			width: 350px;
+			&::after {
+				width: 40px;
+				left: -40px;
+			}
+			&::before {
+				left: -49px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+	.skill {
+		.card {
+			width: 150px;
+			height: 200px;
+			&:hover {
+				.percent {
+					.number {
+						h2 {
+							font-size: 30px !important;
+						}
+					}
+				}
+			}
+		}
+		.text {
+			font-size: 15px;
+		}
+	}
+	.percent {
+		.number {
+			h2 {
+				font-size: 25px !important;
+			}
+		}
+	}
+	.footer {
+		h5 {
+			font-size: 17px !important;
+			color: white !important;
+		}
+		p {
+			font-size: 13px !important;
+		}
+		i {
+			font-size: 30px;
+		}
+	}
+	h1 {
+		font-size: 20px !important;
+	}
+	strong {
+		font-size: 10px;
+	}
+}
+@media (min-width:768px) and (max-width : 991px) {
+	.intro_content {
+		h1 {
+			font-size: 40px !important;
+		}
+		p {
+			font-size: 25px !important;
+		}
+	}
+	.menubar {
+		font-size: 20px;
+		height: 50px;
+	}
+	.detail {
+		h1 {
+			font-size: 30px !important;
+			opacity: 0.7;
+		}
+		strong {
+			font-size: 18px !important;
+		}
+		p {
+			span {
+				font-size: 14px !important;
+			}
+		}
+		a {
+			font-size: 14px !important;
+		}
+		img {
+			height: 200px !important;
+			width: 170px !important;
+		}
+		padding: 50px !important;
+		height: auto !important;
+	}
+	.education {
+		h2 {
+			font-size: 18px !important;
+		}
+		p {
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+	.experience {
+		.card {
+			line-height: 20px !important;
+			p {
+				font-size: 14px !important;
+			}
+			strong {
+				font-size: 16px !important;
+			}
+			&::before {
+				width: 14px !important;
+				height: 14px !important;
+				left: -50px !important;
+				top: 22px;
+			}
+		}
+	}
+	.skill {
+		.card {
+			width: 170px;
+			height: 200px;
+			&:hover {
+				.percent {
+					.number {
+						h2 {
+							font-size: 45px !important;
+						}
+					}
+				}
+			}
+		}
+		.text {
+			font-size: 17px;
+		}
+	}
+	.percent {
+		.number {
+			h2 {
+				font-size: 35px !important;
+			}
+		}
+	}
+	.footer {
+		h5 {
+			font-size: 18px !important;
+			color: white !important;
+		}
+		p {
+			font-size: 14px !important;
+		}
+		i {
+			font-size: 36px;
+		}
+	}
+}
+@media (min-width:992px) and (max-width : 1199px) {
+	.intro_content {
+		h1 {
+			font-size: 48px !important;
+		}
+		p {
+			font-size: 28px !important;
+		}
+	}
+	.menubar {
+		height: 50px !important;
+		font-size: 20px;
+	}
+	.detail {
+		h1 {
+			font-size: 30px !important;
+			opacity: 0.7;
+		}
+		strong {
+			font-size: 18px !important;
+		}
+		p {
+			span {
+				font-size: 14px !important;
+			}
+		}
+		a {
+			font-size: 14px !important;
+		}
+		img {
+			height: 400px !important;
+			width: 200px !important;
+		}
+		padding: 50px !important;
+		height: auto !important;
+	}
+	.education {
+		line-height: 35px !important;
+		.card {
+			p {
+				line-height: 18px !important;
+			}
+		}
+	}
+	.experience {
+		.card {
+			line-height: 20px !important;
+			p {
+				font-size: 14px !important;
+			}
+			&::before {
+				width: 14px !important;
+				height: 14px !important;
+				left: -50px !important;
+				top: 22px;
+			}
+		}
+	}
+	.skill {
+		.card {
+			width: 200px;
+			height: 250px;
+			&:hover {
+				.percent {
+					.number {
+						h2 {
+							font-size: 47px !important;
+						}
+					}
+				}
+			}
+		}
+		.text {
+			font-size: 18px;
+		}
+	}
+	.percent {
+		.number {
+			h2 {
+				font-size: 37px !important;
+			}
+		}
+	}
+	.footer {
+		h5 {
+			font-size: 20px !important;
+			color: white !important;
+		}
+		p {
+			font-size: 14px !important;
+		}
+		i {
+			font-size: 40px;
+		}
+	}
+}
+@media (min-width:1200px) {
+	.intro_content {
+		h1 {
+			font-size: 50px !important;
+		}
+		p {
+			font-size: 30px !important;
+		}
+	}
+	.menubar {
+		height: 50px;
+		font-size: 22px !important;
+	}
+	.detail {
+		h1 {
+			font-size: 36px !important;
+			opacity: 0.7;
+		}
+		strong {
+			font-size: 22px !important;
+		}
+		p {
+			span {
+				font-size: 18px !important;
+			}
+		}
+		a {
+			font-size: 18px !important;
+		}
+		img {
+			height: 400px;
+			width: 250px;
+		}
+		padding: 50px !important;
+	}
+	.aboutme {
+		p {
+			line-height: 25px !important;
+		}
+	}
+	.education {
+		line-height: 40px !important;
+		.card {
+			p {
+				font-size: 16px !important;
+				line-height: 20px !important;
+				opacity: 0.7;
+			}
+		}
+	}
+	.experience {
+		.card {
+			line-height: 25px !important;
+			p {
+				font-size: 18px !important;
+			}
+			strong {
+				font-size: 20px !important;
+			}
+			&::before {
+				width: 18px !important;
+				height: 18px !important;
+				left: -54px !important;
+				top: 20px;
+			}
+		}
+	}
+	.skill {
+		.card {
+			width: 250px;
+			height: 300px;
+			&:hover {
+				.percent {
+					.number {
+						h2 {
+							font-size: 50px !important;
+						}
+					}
+				}
+			}
+		}
+		.text {
+			font-size: 20px;
+		}
+	}
+	.percent {
+		.number {
+			h2 {
+				font-size: 40px !important;
+			}
+		}
+	}
+	.footer {
+		h5 {
+			font-size: 23px !important;
+			color: white !important;
+		}
+		p {
+			font-size: 20px !important;
+		}
+		i {
+			font-size: 40px !important;
+		}
+	}
+}
